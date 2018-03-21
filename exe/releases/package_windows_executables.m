@@ -1,5 +1,5 @@
 clear;
-version = '0.4.0';
+version = '0.4.1';
 
 out_x86 = sprintf('OpenFace_%s_win_x86', version);
 out_x64 = sprintf('OpenFace_%s_win_x64', version);
@@ -133,10 +133,11 @@ feat_test = sprintf('FeatureExtraction.exe -f samples/default.wmv -verbose');
 dos(feat_test);
 img_test = sprintf('FaceLandmarkImg.exe -fdir samples -verbose');
 dos(img_test);
-vid_test = sprintf('FaceLandmarkVidMulti.exe -f samples/multi_face.avi');
+vid_test = sprintf('FaceLandmarkVidMulti.exe -f samples/multi_face.avi -verbose');
 dos(vid_test);
 rmdir('processed', 's');
 
+%%
 cd('..');
 cd(out_x86);
 vid_test = sprintf('FaceLandmarkVid.exe -f samples/default.wmv');
@@ -145,7 +146,7 @@ feat_test = sprintf('FeatureExtraction.exe -f samples/default.wmv -verbose');
 dos(feat_test);
 img_test = sprintf('FaceLandmarkImg.exe -fdir samples -verbose');
 dos(img_test);
-vid_test = sprintf('FaceLandmarkVidMulti.exe -f samples/multi_face.avi');
+vid_test = sprintf('FaceLandmarkVidMulti.exe -f samples/multi_face.avi -verbose');
 dos(vid_test);
 rmdir('processed', 's');
 cd('..');
